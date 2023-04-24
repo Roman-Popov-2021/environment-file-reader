@@ -4,6 +4,12 @@ cmake_minimum_required(VERSION 3.0)
 # Specify the project info.
 project(environment-file-reader VERSION 1.0.0 DESCRIPTION "Environment file reader")
 
+# For creating Dll from Windows
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+
+# Hide Windows warning
+add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+
 # Declare the library target.
 add_library(${PROJECT_NAME} SHARED
     src/main.h
